@@ -2,6 +2,7 @@ package org.lessons.java.shop;
 
 
 import java.math.BigDecimal;
+import java.util.Random;
 
 /*
    Lo shop gestisce diversi tipi di prodotto:
@@ -15,9 +16,10 @@ private int imeiCode;
 private int memory;
 
     // COSTRUTTORI
-public Smartphone (int code, String name, String brand, BigDecimal price, BigDecimal vat, int imeiCode, int memory){
-    super(code, name, brand, price, vat);
-this.imeiCode=imeiCode;
+public Smartphone (String name, String brand, BigDecimal price, BigDecimal vat, int memory){
+    super(name, brand, price, vat);
+    Random random = new Random();
+imeiCode= random.nextInt(10000000, 100000000);
 this.memory=memory;
 }
     //GETTERS AND SETTERS
@@ -41,5 +43,16 @@ this.memory=memory;
 // METODI
 
 
-
+    @Override
+    public String toString() {
+        return "Smartphone{" +
+                "code=" + getCode() +
+                ", name='" + getName()+ '\'' +
+                ", brand='" + getBrand() + '\'' +
+                ", price=" + getPrice() +
+                ", vat=" + getVat() +
+                ", imeiCode=" + imeiCode +
+                ", memory=" + memory +
+                '}';
+    }
 }

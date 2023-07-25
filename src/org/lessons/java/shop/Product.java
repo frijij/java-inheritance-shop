@@ -12,6 +12,7 @@ iva
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Random;
 
 public class Product {
     // ATTRIBUTI
@@ -31,8 +32,9 @@ il prodotto esponga sia un metodo per avere il prezzo base che uno per avere il 
  */
     // COSTRUTTORI
 
-    public Product(int code, String name, String brand, BigDecimal price, BigDecimal vat) {
-        this.code = code;
+    public Product(String name, String brand, BigDecimal price, BigDecimal vat) {
+        Random random = new Random();
+        code= random.nextInt(00000000, 100000000);
         this.name = name;
         this.brand = brand;
         this.price = price;
@@ -78,11 +80,24 @@ il prodotto esponga sia un metodo per avere il prezzo base che uno per avere il 
         this.vat = vat;
     }
 
+    @Override
+    public String toString() {
+        return "Product{" +
+                "code=" + code +
+                ", name='" + name + '\'' +
+                ", brand='" + brand + '\'' +
+                ", price=" + price +
+                ", vat=" + vat +
+                '}';
+    }
+
     // METODI
     public BigDecimal getTotalPrice(){
     BigDecimal vatOnPrice = price.multiply(vat);
     BigDecimal totalPrice= price.add(vatOnPrice);
     return totalPrice.setScale(2, RoundingMode.HALF_EVEN);
+
+
 }
 
 }

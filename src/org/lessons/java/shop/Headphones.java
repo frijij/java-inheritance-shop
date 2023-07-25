@@ -13,8 +13,8 @@ private String color;
 private boolean isWireless;
 
     // COSTRUTTORI
-    public Headphones (int code, String name, String brand, BigDecimal price, BigDecimal vat, String color, boolean isWireless){
-        super(code, name, brand, price, vat);
+    public Headphones (String name, String brand, BigDecimal price, BigDecimal vat, String color, boolean isWireless){
+        super(name, brand, price, vat);
         this.color=color;
         this.isWireless=isWireless;
     }
@@ -40,5 +40,16 @@ private boolean isWireless;
     // METODI
 
 
-
+    @Override
+    public String toString() {
+        return "Headphones{" +
+                "code=" + getCode() +
+                ", name='" + getName() + '\'' +
+                ", brand='" + getBrand() + '\'' +
+                ", price=" + getPrice() +
+                ", vat=" + getVat() +
+                "color='" + color + '\'' +
+                ", isWireless=" + isWireless +
+                '}';
+    }
 }
