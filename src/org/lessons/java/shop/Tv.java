@@ -6,6 +6,8 @@ Televisori, caratterizzati dalle dimensioni e dalla proprietà di essere smart o
  */
 // estende la superclasse Product
 
+import java.math.BigDecimal;
+
 public class Tv extends Product{
 
     // ATTRIBUTI
@@ -13,6 +15,11 @@ private int dimensions;
 private boolean isSmart;
 
     // COSTRUTTORI
+    public Tv (int code, String name, String brand, BigDecimal price, BigDecimal vat, int dimensions, boolean isSmart){
+        super(code, name, brand, price, vat);
+        this.dimensions=dimensions;
+        this.isSmart=isSmart;
+    }
 
     //GETTERS AND SETTERS
 

@@ -1,6 +1,8 @@
 package org.lessons.java.shop;
 
 
+import java.math.BigDecimal;
+
 /*
    Lo shop gestisce diversi tipi di prodotto:
 Smartphone, caratterizzati anche dal codice IMEI e dalla quantità di memoria
@@ -13,7 +15,11 @@ private int imeiCode;
 private int memory;
 
     // COSTRUTTORI
-
+public Smartphone (int code, String name, String brand, BigDecimal price, BigDecimal vat, int imeiCode, int memory){
+    super(code, name, brand, price, vat);
+this.imeiCode=imeiCode;
+this.memory=memory;
+}
     //GETTERS AND SETTERS
 
     public int getImeiCode() {

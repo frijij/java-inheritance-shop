@@ -31,7 +31,12 @@ il prodotto esponga sia un metodo per avere il prezzo base che uno per avere il 
  */
     // COSTRUTTORI
 
-    public Product(){
+    public Product(int code, String name, String brand, BigDecimal price, BigDecimal vat) {
+        this.code = code;
+        this.name = name;
+        this.brand = brand;
+        this.price = price;
+        this.vat = vat;
     }
 
 
