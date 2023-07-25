@@ -1,7 +1,5 @@
 package org.lessons.java.shop;
 
-public class Product {
-    // ATTRIBUTI
 /*
 Creare la classe Prodotto che gestisce i prodotti dello shop.
 Un prodotto è caratterizzato da:
@@ -12,6 +10,18 @@ prezzo
 iva
  */
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+public class Product {
+    // ATTRIBUTI
+private int code;
+private String name;
+private String brand;
+private BigDecimal price;
+private BigDecimal vat;
+
+
 /*
 fare in modo che:
 il codice prodotto sia accessibile solo in lettura
@@ -21,14 +31,59 @@ il prodotto esponga sia un metodo per avere il prezzo base che uno per avere il 
  */
     // COSTRUTTORI
 
+    public Product(int code, String name, String brand, BigDecimal price, BigDecimal vat) {
+        this.code = code;
+        this.name = name;
+        this.brand = brand;
+        this.price = price;
+        this.vat = vat;
+    }
+
 
     // GETTERS AND SETTERS
 
+    public int getCode() {
+        return code;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public BigDecimal getVat() {
+        return vat;
+    }
+
+    public void setVat(BigDecimal vat) {
+        this.vat = vat;
+    }
+
 
     // METODI
-
-
-
-
+public BigDecimal getTotalPrice(){
+BigDecimal vatOnPrice = price.multiply(vat);
+BigDecimal totalPrice= price.add(vatOnPrice);
+return totalPrice.setScale(2, RoundingMode.HALF_EVEN);
+}
 
 }
