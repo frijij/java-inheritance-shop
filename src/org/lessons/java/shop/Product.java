@@ -31,12 +31,7 @@ il prodotto esponga sia un metodo per avere il prezzo base che uno per avere il 
  */
     // COSTRUTTORI
 
-    public Product(int code, String name, String brand, BigDecimal price, BigDecimal vat) {
-        this.code = code;
-        this.name = name;
-        this.brand = brand;
-        this.price = price;
-        this.vat = vat;
+    public Product(){
     }
 
 
@@ -80,10 +75,10 @@ il prodotto esponga sia un metodo per avere il prezzo base che uno per avere il 
 
 
     // METODI
-public BigDecimal getTotalPrice(){
-BigDecimal vatOnPrice = price.multiply(vat);
-BigDecimal totalPrice= price.add(vatOnPrice);
-return totalPrice.setScale(2, RoundingMode.HALF_EVEN);
+    public BigDecimal getTotalPrice(){
+    BigDecimal vatOnPrice = price.multiply(vat);
+    BigDecimal totalPrice= price.add(vatOnPrice);
+    return totalPrice.setScale(2, RoundingMode.HALF_EVEN);
 }
 
 }
