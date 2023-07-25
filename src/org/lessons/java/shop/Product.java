@@ -73,7 +73,6 @@ il prodotto esponga sia un metodo per avere il prezzo base che uno per avere il 
         this.vat = vat;
     }
 
-
     // METODI
     public BigDecimal getTotalPrice(){
     BigDecimal vatOnPrice = price.multiply(vat);

@@ -14,7 +14,6 @@ private int memory;
 
     // COSTRUTTORI
 
-
     //GETTERS AND SETTERS
 
     public int getImeiCode() {

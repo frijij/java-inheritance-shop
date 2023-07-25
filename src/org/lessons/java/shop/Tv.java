@@ -14,7 +14,6 @@ private boolean isSmart;
 
     // COSTRUTTORI
 
-
     //GETTERS AND SETTERS
 
     public int getDimensions() {

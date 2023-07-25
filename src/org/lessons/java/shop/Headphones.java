@@ -12,7 +12,6 @@ private boolean isWireless;
 
     // COSTRUTTORI
 
-
     //GETTERS AND SETTERS
 
     public String getColor() {
